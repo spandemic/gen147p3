@@ -81,8 +81,13 @@ function p3_drawTile(i, j) {
     vertex(th, tw);
     vertex(th, 0);
     endShape(CLOSE);
+    noFill();
+    stroke("#FFFFFF");
+    curve(0, 0, 0, 8, tw, 8, tw, 16);
+    curve(0, 16, 0, 24, tw, 24, tw, 32);
   }
 
+  noStroke();
   // create sand bars
   if (noise(i + 1, j) < 0.55 && noise(i, j) > 0.55) {
     fill(groundTile);
